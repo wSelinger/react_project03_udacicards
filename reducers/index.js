@@ -14,7 +14,6 @@ export default function reducer(state = {}, action) {
 
     case SET_DECKS:
       const { decks } = action
-      console.log(decks)
       return {
         ...decks
       }

@@ -12,7 +12,7 @@ Installation of **expo** on IOS mobile device
 This version was developed on iPad running IOS 11.1.1
 
 ### Getting project from git
-git clone https://github.com/wSelinger/react_project03_udacicards.git
+git clone https://github.com/wSelinger/udacicards.git
 
 ### Installation
 Change into project directory

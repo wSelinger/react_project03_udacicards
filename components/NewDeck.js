@@ -26,7 +26,7 @@ class NewDeck extends React.Component {
     dispatch(addDeck(title))
     api.addDeck(title)
     this.setState({ title: ''})
-    navigation.goBack();
+    navigation.navigate('IndividualDeck', { deckId: title});
   }
 
   handleTitleChange = (value) => {

@@ -16,7 +16,7 @@ function renderItem(listItem, navigation) {
   const { title, questions } = listItem.item
   return (
     <TouchableOpacity onPress={() => navigation.navigate('IndividualDeck', { deckId: title})}>
-      <View style={{flex: 1, margin: 10, borderBottomWidth: StyleSheet.hairlineWidth  }}>
+      <View style={styles.item}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{questions.length} card{questions.length !== 1 ? 's' : ''}</Text>
       </View>
@@ -32,9 +32,8 @@ class DeckList extends Component {
   render() {
     const { navigation, decks } = this.props
     return (
-      <View style={{ flex: 1 }}>
+      <View>
         <FlatList
-          style={{ flex: 1 }}
           data={decks}
           renderItem={(item) => renderItem(item, navigation)}
           keyExtractor={(item) => item.title}
@@ -45,14 +44,21 @@ class DeckList extends Component {
 }
 
 const styles = StyleSheet.create({
+  item: {
+    paddingTop: 30,
+    paddingBottom: 30,
+    borderBottomWidth: StyleSheet.hairlineWidth
+  },
   title: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#444',
+    textAlign: 'center'
   },
   description: {
     fontSize: 13,
     color: '#999',
+    textAlign: 'center'
   }
 })
 

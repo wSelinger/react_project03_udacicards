@@ -25,7 +25,7 @@ class Quiz extends React.Component {
       .then(setLocalNotification)
   }
 
-  resetQuiz() {
+  resetQuiz = () => {
     const { deck } = this.props
     this.setState({
       cardsLeft: deck.questions.map((card, index) => index),
@@ -60,6 +60,11 @@ class Quiz extends React.Component {
     )
   }
 
+  handleBackToDeck = () => {
+    const { navigation } = this.props
+    navigation.goBack()
+  }
+
   handleCorrectAnswer = () => {
     this.setState((state) => ({
       correctAnswers: state.correctAnswers+1
@@ -90,6 +95,14 @@ class Quiz extends React.Component {
         <View style={styles.container}>
           <Text>Congratulations, you completed the quiz !</Text>
           <Text>Correct answers: {correctAnswers}/{questions.length}</Text>
+          <Button
+            title='Restart Quiz'
+            onPress={this.resetQuiz}
+          />
+          <Button
+            title='Back to deck'
+            onPress={this.handleBackToDeck}
+          />
         </View>
       )
     }

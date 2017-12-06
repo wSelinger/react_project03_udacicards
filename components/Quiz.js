@@ -100,7 +100,7 @@ class Quiz extends React.Component {
             onPress={this.resetQuiz}
           />
           <Button
-            title='Back to deck'
+            title='Back to Deck'
             onPress={this.handleBackToDeck}
           />
         </View>
